@@ -1,29 +1,15 @@
 import { useState } from "react";
-import axios from "axios";
 
 function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleLogin = async (e) => {
+  const handleLogin = (e) => {
     e.preventDefault();
 
-    // Check if username or password is empty
-    if (!username || !password) {
-      alert("Login failed!");
-      return;
-    }
-
-    try {
-      const response = await axios.post("YOUR_API_URL", {
-        username: username,
-        password: password,
-      });
-
-      if (response.status === 200) {
-        alert("Login successful!");
-      }
-    } catch (error) {
+    if (username === "Devdlc@123" && password === "Devdlc@123") {
+      alert("Login successful!");
+    } else {
       alert("Login failed!");
     }
   };
